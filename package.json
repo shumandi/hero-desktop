@@ -1,6 +1,6 @@
 {
   "name": "hexo-el",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "hexo display",
   "main": "main.js",
   "scripts": {

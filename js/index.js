@@ -6,12 +6,14 @@ let blogDir = undefined;
 let allPost = undefined;
 
 window.onload = function () {
+  //获取目录
   const viewFile = document.querySelector('#blogdir');
   viewFile.addEventListener('change', function () {
     const dirname = document.querySelector('#dirname');
     dirname.innerHTML = this.files[0].path;
     blogDir = this.files[0].path;
     document.querySelector('.section').style.visibility = 'visible';
+    listpost()
   });
 
   const localhost = document.querySelector('.localhost');
@@ -20,15 +22,41 @@ window.onload = function () {
   openbr.addEventListener('click', openBr);
   //控制台输出
   const tminput = document.querySelector('.temin-input');
-  //打开服务器
-
+  //获取所有post
   const getPost = document.querySelector('.get-all-post');
   getPost.addEventListener('click', listpost);
+  //添加post
+  const addPost = document.querySelector('.add-post');
+  const blogName = document.querySelector('.blogname');
+  addPost.addEventListener('click', addMore);
+  //添加页面
+  const addPage = document.querySelector('.add-page');
+  addPage.addEventListener('click', addMore);
+  //添加博客和页面函数。
+  function addMore(e) {
+    if (blogName){
+      let tmstr = '';
+      let parameter = e.target.dataset.parameter ? e.target.dataset.parameter.toString() : ''; //获取参数
+      tmstr = 'hexo new ' + parameter + ' ' + blogName.value; //控制台参数。
+      process.exec(tmstr, {cwd:blogDir}, function (error, stdout, stderr) {
+        if (error) {
+          tminput.innerHTML = error;
+        } else {
+          tminput.innerHTML = stdout;
+        }
+      })
+    }
+  }
+  //打开服务器
   function openServer() {
     if (blogDir){
       process.exec('hexo s', {cwd: blogDir},function (error, stdout, stderr) {
         if (error){
           tminput.innerHTML = error;
+          localhost.innerHTML = '服务器已经打开';
+          localhost.disabled = "disabled";
+        } else {
+          tminput.innerHTML = stdout;
           localhost.innerHTML = '服务器已经打开';
           localhost.disabled = "disabled";
         }
