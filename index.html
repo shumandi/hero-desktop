@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link href="https://cdn.bootcss.com/wingcss/0.1.9/wing.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div class="body">
+    <main class="main">
+        <section class="section">
+            <article class="control">
+                <button class="localhost">打开服务器</button>
+                <button class="open-Br" >打开浏览器</button>
+            </article>
+            <!--添加博客和页面-->
+            <article class="addmore">
+                <input type="text" name="blogname" placeholder="博客或者页面名称">
+                <button class="add-post">添加博客</button>
+                <button class="add-page">添加页面</button>
+            </article>
+            <!--文件读取-->
+            <article>
+                <article>
+                    <button class="get-all-post">获取所有post</button>
+                </article>
+            </article>
+            <article>
+                <li class="list">
+
+                </li>
+            </article>
+        </section>
+        <aside class="aside">
+            <!--选择目录-->
+            <div>
+                <label for="blogdir">选择博客所在目录</label>
+                <input name="blogdir" id="blogdir" type="file" webkitdirectory directory />
+                <p id="dirname"></p>
+            </div>
+            <!--控制台输出-->
+            <div>
+                <pre><code class="temin-input"></code></pre>
+            </div>
+        </aside>
+    </main>
+    <footer class="footer">
+        <p>Hexo 桌面程序 by shumandi</p>
+    </footer>
+</div>
+
+<script src="js/index.js" s></script>
+</body>
+</html>

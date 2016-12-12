@@ -1,0 +1,14 @@
+{
+  "name": "hexo-el",
+  "version": "0.0.1",
+  "description": "hexo display",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "shumandi",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.4.12"
+  }
+}

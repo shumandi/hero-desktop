@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    transition:All 0.4s ease-in-out;
+}
+.list li:hover{
+    transform:scale(1.002);
+    box-shadow: 3px 3px 3px gainsboro;
+}
+.body{
+}
+.main{
+    display: flex;
+    flex:9;
+    align-items:stretch;
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 3px;
+}
+.footer{
+    background-color: #eeeeee;
+    align-items: center;
+    border: 1px solid gainsboro;
+    border-radius: 8px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+}
+.section{
+    flex: 5;
+    visibility: hidden;
+}
+.aside{
+    flex: 1;
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 3px;
+}
+.addmore{
+    display: flex;
+    justify-content: flex-start;
+}
+input[name=blogname]{
+    flex: 2;
+}
+.add-page, .add-post{
+    flex:1;
+}
+.list{
+    transition:All 0.4s ease-in-out;
+
+    display: none;
+    list-style: none;
+    flex-direction: column-reverse;
+    border: 1px solid beige;
+    border-radius: 5px;
+    margin: 5px;
+}
+.list:hover{
+
+}
+.list li{
+    padding-left: 20px;
+    cursor: pointer;
+    list-style: none;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+.list li:nth-child(even){
+    background-color: gainsboro;
+}
+.list li:hover{
+    background-color: pink;
+    transform:scale(1.02);
+    box-shadow: 3px 3px 3px gainsboro;
+}
+.control{
+    display: flex;
+}
